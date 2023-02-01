@@ -180,6 +180,49 @@
 				<section>
 					@Getter @Setter
 				</section>
+
+				<section data-background="images/backgrounds/scared-frankenstein.jpg" data-background-opacity="0.7" data-transition="none">
+					<h1 class="large shadowed">@NoArgsConstructor</h1>
+					<div class="cc0">
+						https://www.flickr.com/photos/51514834@N00/51952528729/
+					</div>
+				</section>
+
+				<section data-transition="none">
+					<h3>@NoArgsConstructor</h3>
+					<div class="centered-content">
+						<div class="fragment fade-in-then-semi-out">
+							<h4>With Lombok</h4>
+							<strong>49 characters</strong> (ex whitespace).
+	
+							<pre>
+								<code class="language-java hljs large-code-sample" data-trim>
+									import lombok.NoArgsConstructor;
+									
+									@NoArgsConstructor
+									class LombokNoArgsConstructor {
+										// snip ...
+									}
+								</code>
+							</pre>
+						</div>
+						<div class="fragment">
+							<h4>Without Lombok</h4>
+							<strong>10 characters</strong> (+ class name): 
+	
+							<pre>
+								<code class="language-java hljs large-code-sample" data-trim>
+									class AFortyCharacterClassNameInOrderToBenefit {
+										public AFortyCharacterClassNameInOrderToBenefit() {}
+									
+										// snip ...
+									}
+								</code>
+							</pre>
+						</div>
+					</div>
+				</section>
+
 				
 				<section>
 					<h3>Loggers</h3>
