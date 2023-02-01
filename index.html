@@ -131,7 +131,35 @@
 				</section>
 
 				<section>
-					<h3>Slopiness with Value Objects</h3>
+					<h3>Redundant annotations</h3>
+					<div class="centered-content">
+						<pre>
+							<code class="language-java hljs large-code-sample" data-trim>
+								@AllArgsConstructor
+								class Person {
+									public static void main(String[] args) {
+										var person = new Person("Jaap", 41);
+								
+										System.out.println(person.getName());
+									}
+								
+									@Getter
+									private String name;
+								
+									@Getter
+									private int age;
+									
+									public String getName() {
+										return String.format("%s (%d)", name, age);
+									}
+								}
+							</code>
+						</pre>
+					</div>
+				</section>
+
+				<section>
+					<h3>Sloppiness with Value Objects</h3>
 					<div class="centered-content">
 						<pre>
 							<code class="language-java hljs" data-trim>
