@@ -85,6 +85,45 @@
 					</div>
 				</section>
 				
+				<section data-transition="none">
+					<h3>Launching the annotation processor</h3>
+					<div class="centered-content">
+						<div class="fragment fade-in-then-semi-out">
+							<p><code>META-INF/services/javax.annotation.processing.Processor</code></p>
+							<pre>
+								<code class="language-java hljs large-code-sample" data-trim data-line-numbers>
+									lombok.launch.AnnotationProcessorHider$AnnotationProcessor
+								</code>
+							</pre>
+						</div>
+						<div class="fragment fade-in-then-semi-out">
+							<p style="font-size: 2em;">⬇️</p>
+							<p><code>lombok.launch.ShadowClassLoader</code></p>
+							<p>🤫 <code>.SCL.lombok</code> 🤫</p>
+						</div>
+						<div class="fragment fade-in-then-semi-out">
+							<p style="font-size: 2em;">⬇️</p>
+							<p><code>lombok.core.AnnotationProcessor</code></p>
+						</div>
+						<div class="fragment fade-in-then-semi-out">
+							<p style="font-size: 2em;">⬇️</p>
+							<p><code>lombok.javac.apt.LombokProcessor</code></p>
+						</div>
+					</div>
+				</section>
+				
+				<section data-background="images/backgrounds/cameleon-camouflage.jpg" data-transition="none">
+					<div class="cc-by-nc-sa" >
+						Author: Chris Penrose<br/>
+						https://flickr.com/photos/95366033@N00/21448779922/
+					</div>
+				</section>
+				
+				<section data-transition="none">
+					<h3>Round and round it goes</h3>
+					<div class="centered-content" style="font-size: 15em;">🔁</div>
+				</section>
+				
 				<section data-background="images/backgrounds/cognitive-load.jpg" data-transition="none">
 					<div class="centered-content">
 						<h1 class="huge">Cognitive load</h1>
