@@ -16,6 +16,8 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<!-- Opening ------------------------------------------------------------------------------------------>
+				
 				<section>
 					<div class="centered-content">
 						<h1 class="title">Is there life after Lombok?</h1>
@@ -43,6 +45,8 @@
 						https://commons.wikimedia.org/wiki/File:Ask_the_architect_during_Devoxx_Belgium_2018.jpg
 					</div>
 				</section>
+
+				<!-- Introducing myself ------------------------------------------------------------------------------->
 
 				<section data-transition="none">
 					<h2>about:me</h2>
@@ -74,6 +78,8 @@
 						<img src="images/a1_academy_common_top_png.png" alt="alpha1 academy logo" style="height: 200px;"/>
 					</div>
 				</section>
+				
+				<!-- Lombok under the hood -->
 				
 				<section data-background="images/backgrounds/car-hood-up.jpg" data-background-opacity="0.2" data-transition="none">
 					<div class="centered-content">
@@ -123,6 +129,149 @@
 					<h3>Round and round it goes</h3>
 					<div class="centered-content" style="font-size: 15em;">🔁</div>
 				</section>
+				
+				<!-- No-brainers -------------------------------------------------------------------------------------->
+
+				<section data-background="images/backgrounds/scared-frankenstein.jpg" data-background-opacity="0.7" data-transition="none">
+					<h1 class="large shadowed">@NoArgsConstructor</h1>
+					<div class="cc0">
+						https://www.flickr.com/photos/51514834@N00/51952528729/
+					</div>
+				</section>
+
+				<section data-transition="none">
+					<h3>@NoArgsConstructor</h3>
+					<div class="centered-content">
+						<div class="fragment fade-in-then-semi-out">
+							<h4>With Lombok</h4>
+							<strong>49 characters</strong> (ex whitespace).
+
+							<pre>
+								<code class="language-java hljs large-code-sample" data-trim>
+									import lombok.NoArgsConstructor;
+									
+									@NoArgsConstructor
+									class LombokNoArgsConstructor {
+										// snip ...
+									}
+								</code>
+							</pre>
+						</div>
+						<div class="fragment">
+							<h4>Without Lombok</h4>
+							<strong>10 characters</strong> (+ class name):
+
+							<pre>
+								<code class="language-java hljs large-code-sample" data-trim>
+									class AFortyCharacterClassNameInOrderToBenefit {
+										public AFortyCharacterClassNameInOrderToBenefit() {}
+									
+										// snip ...
+									}
+								</code>
+							</pre>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="images/backgrounds/cat-hiding.jpg" data-background-opacity="0.7" data-transition="none">
+					<h1 class="huge">@Slf4j</h1>
+					<div class="cc-by-nc-sa">
+						Author: Kerri Lee SMith<br/>
+						https://flickr.com/photos/77654185@N07/41504551702/
+					</div>
+				</section>
+
+				<section data-transition="none">
+					<h3>@Slf4j</h3>
+					<div class="centered-content">
+						<div class="fragment">
+							Is this worth &gt; 1000 lines of externally maintained code?
+							<pre>
+								<code class="language-java hljs large-code-sample" data-trim data-line-numbers="|1,3">
+									import lombok.extern.slf4j.Slf4j;
+									
+									@Slf4j
+									class LoggerExample {
+										
+										void logSomething() {
+											log.info("Something");
+										}
+									}
+								</code>
+							</pre>
+						</div>
+						<div class="fragment">
+							Or can we live without it?
+							<pre>
+								<code class="language-java hljs large-code-sample" data-trim data-line-numbers="1,2,5">
+									import org.slf4j.Logger;
+									import org.slf4j.LoggerFactory;
+									
+									class LoggerExample {
+										private static final Logger log = LoggerFactory.getLogger(LoggerExample.class);
+										
+										void logSomething() {
+											log.info("Something");
+										}
+									}
+								</code>
+							</pre>
+						</div>
+					</div>
+				</section>
+
+				<section data-transition="none">
+					<h3>IntelliJ Live template for slf4j</h3>
+					<div class="centered-content">
+						<pre>
+							<code class="hljs large-code-sample" data-trim data-line-numbers="|2|4">
+									&lt;template name="logger" 
+											value="private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger($CLASS_NAME$.class);" 
+											toReformat="false" 
+											toShortenFQNames="true"&gt;
+										&lt;variable name="CLASS_NAME" expression="className()" defaultValue="" alwaysStopAt="true" /&gt;
+										&lt;context&gt;
+											&lt;option name="JAVA_CODE" value="true" /&gt;
+										&lt;/context&gt;
+									&lt;/template&gt;
+							</code>
+						</pre>
+					</div>
+				</section>
+
+				<!-- Read / write ratio ------------------------------------------------------------------------------->
+
+				<section data-transition="none">
+					<div class="centered-content">
+						<div style="width: 40%; float: left;">
+							<h1 class="title" style="font-size: 15em;"><code>1</code></h1>
+						</div>
+						<div style="width: 20%; float: left;">
+							<h1 class="title" style="font-size: 15em;"><code>:</code></h1>
+						</div>
+						<div style="width: 40%; float: left;">
+							<h1 class="title" style="font-size: 15em;"><code>10</code></h1>
+						</div>
+						<div class="fragment" style="font-size: 2em;">
+							<div style="width: 40%; float: left;">
+								<p>Time spent writing code</p>
+							</div>
+							<div style="width: 20%; float: left;">
+								<p></p>
+							</div>
+							<div style="width: 40%; float: left;">
+								<p>Time spent Reading code</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<!-- IDE Usability ------------------------------------------------------------------------------------>
+				
+				<!-- TODO -->
+				
+				<!-- Working memory / cognitive load ------------------------------------------------------------------>
 				
 				<section data-background="images/backgrounds/cognitive-load.jpg" data-transition="none">
 					<div class="centered-content">
@@ -219,30 +368,7 @@
 					</div>
 				</section>
 
-				<section data-transition="none">
-					<div class="centered-content">
-						<div style="width: 40%; float: left;">
-							<h1 class="title" style="font-size: 15em;"><code>1</code></h1>
-						</div>
-						<div style="width: 20%; float: left;">
-							<h1 class="title" style="font-size: 15em;"><code>:</code></h1>
-						</div>
-						<div style="width: 40%; float: left;">
-							<h1 class="title" style="font-size: 15em;"><code>10</code></h1>
-						</div>
-						<div class="fragment" style="font-size: 2em;">
-							<div style="width: 40%; float: left;">
-								<p>Time spent writing code</p>
-							</div>
-							<div style="width: 20%; float: left;">
-								<p></p>
-							</div>
-							<div style="width: 40%; float: left;">
-								<p>Time spent Reading code</p>
-							</div>
-						</div>
-					</div>
-				</section>
+				<!-- Sloppy design ------------------------------------------------------------------------------------>
 
 				<section data-background="images/backgrounds/builders.jpg" data-background-opacity="0.7" data-transition="none">
 					<div class="centered-content">
@@ -330,114 +456,6 @@
 				<section>
 					@Getter @Setter
 				</section>
-
-				<section data-background="images/backgrounds/scared-frankenstein.jpg" data-background-opacity="0.7" data-transition="none">
-					<h1 class="large shadowed">@NoArgsConstructor</h1>
-					<div class="cc0">
-						https://www.flickr.com/photos/51514834@N00/51952528729/
-					</div>
-				</section>
-
-				<section data-transition="none">
-					<h3>@NoArgsConstructor</h3>
-					<div class="centered-content">
-						<div class="fragment fade-in-then-semi-out">
-							<h4>With Lombok</h4>
-							<strong>49 characters</strong> (ex whitespace).
-	
-							<pre>
-								<code class="language-java hljs large-code-sample" data-trim>
-									import lombok.NoArgsConstructor;
-									
-									@NoArgsConstructor
-									class LombokNoArgsConstructor {
-										// snip ...
-									}
-								</code>
-							</pre>
-						</div>
-						<div class="fragment">
-							<h4>Without Lombok</h4>
-							<strong>10 characters</strong> (+ class name): 
-	
-							<pre>
-								<code class="language-java hljs large-code-sample" data-trim>
-									class AFortyCharacterClassNameInOrderToBenefit {
-										public AFortyCharacterClassNameInOrderToBenefit() {}
-									
-										// snip ...
-									}
-								</code>
-							</pre>
-						</div>
-					</div>
-				</section>
-
-				<section data-background="images/backgrounds/cat-hiding.jpg" data-background-opacity="0.7" data-transition="none">
-					<h1 class="huge">@Slf4j</h1>
-					<div class="cc-by-nc-sa">
-						Author: Kerri Lee SMith<br/>
-						https://flickr.com/photos/77654185@N07/41504551702/
-					</div>
-				</section>
-				
-				<section data-transition="none">
-					<h3>@Slf4j</h3>
-					<div class="centered-content">
-						<div class="fragment">
-							Is this worth &gt; 1000 lines of externally maintained code?
-							<pre>
-								<code class="language-java hljs large-code-sample" data-trim data-line-numbers="|1,3">
-									import lombok.extern.slf4j.Slf4j;
-									
-									@Slf4j
-									class LoggerExample {
-										
-										void logSomething() {
-											log.info("Something");
-										}
-									}
-								</code>
-							</pre>
-						</div>
-						<div class="fragment">
-							Or can we live without it?
-							<pre>
-								<code class="language-java hljs large-code-sample" data-trim data-line-numbers="1,2,5">
-									import org.slf4j.Logger;
-									import org.slf4j.LoggerFactory;
-									
-									class LoggerExample {
-										private static final Logger log = LoggerFactory.getLogger(LoggerExample.class);
-										
-										void logSomething() {
-											log.info("Something");
-										}
-									}
-								</code>
-							</pre>
-						</div>
-					</div>
-				</section>
-				
-				<section data-transition="none">
-					<h3>IntelliJ Live template for slf4j</h3>
-					<div class="centered-content">
-						<pre>
-							<code class="hljs large-code-sample" data-trim data-line-numbers="|2|4">
-									&lt;template name="logger" 
-											value="private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger($CLASS_NAME$.class);" 
-											toReformat="false" 
-											toShortenFQNames="true"&gt;
-										&lt;variable name="CLASS_NAME" expression="className()" defaultValue="" alwaysStopAt="true" /&gt;
-										&lt;context&gt;
-											&lt;option name="JAVA_CODE" value="true" /&gt;
-										&lt;/context&gt;
-									&lt;/template&gt;
-							</code>
-						</pre>
-					</div>
-				</section>
 				
 				<section data-transition="none" data-background="images/backgrounds/records.jpg" data-background-opacity="0.3">
 					<h1 class="centered-content large">What about records?</h1>
@@ -447,12 +465,22 @@
 					</div>
 				</section>
 				
+				<section>
+					<h1 class="huge">
+						records<br/>
+						!=<br/>
+						@Value
+					</h1>
+				</section>
+				
 				<section data-transition="none" data-background="images/backgrounds/duke-heart.jpg"  data-background-color="rgb(255, 255, 255)" data-background-size="auto 80%">
 					<h1>Love the language</h1>
 					<div style="position: absolute; bottom: 30px; right: 30px;">
 						<p>#lovejava</p>
 					</div>
 				</section>
+				
+				<!-- Closing slide ------------------------------------------------------------------------------------>
 
 				<section data-transition="none">
 					<h1 class="huge">Thank you!</h1>
