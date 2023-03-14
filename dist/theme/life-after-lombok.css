@@ -1,0 +1,16 @@
+.working-memory {
+    width: 100%; display: flex;
+}
+
+.chunk {
+    flex: 1;
+    aspect-ratio: 1/1;
+    border-radius: 1vw;
+    margin: 1vw;
+    color: #191919;
+    background-color: #666666;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
