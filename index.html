@@ -91,10 +91,17 @@
 				<!-- Audience poll -->
 				
 				<section data-transition="none">
-					<h1 class="huge">And how about you?</h1>
+					<h1 class="centered-content huge">And how about you?</h1>
 				</section>
 				
 				<!-- Lombok under the hood -->
+
+				<section data-background="images/backgrounds/voodoo-magic.jpg" data-transition="none">
+					<div class="cc-by-nc-sa" >
+						Author: Dragon Papillon Photography<br/>
+						https://www.flickr.com/photos/paloetic/4797683715/
+					</div>
+				</section>
 				
 				<section data-background="images/backgrounds/car-hood-up.jpg" data-background-opacity="0.2" data-transition="none">
 					<div class="centered-content">
@@ -106,7 +113,7 @@
 					</div>
 				</section>
 				
-				<section data-transition="none" data-visibility="hidden">
+				<section data-transition="none">
 					<h3>Launching the annotation processor</h3>
 					<div class="centered-content">
 						<div class="fragment fade-in-then-semi-out">
@@ -144,15 +151,12 @@
 					<h3>Round and round it goes</h3>
 					<div class="centered-content" style="font-size: 15em;">🔁</div>
 				</section>
-
-				<section data-background="images/backgrounds/voodoo-magic.jpg" data-transition="none">
-					<div class="cc-by-nc-sa" >
-						Author: Dragon Papillon Photography<br/>
-						https://www.flickr.com/photos/paloetic/4797683715/
-					</div>
-				</section>
 				
 				<!-- No-brainers -------------------------------------------------------------------------------------->
+				
+				<section>
+					<!-- BlANK SLIDE -->
+				</section>
 
 				<section data-background="images/backgrounds/scared-frankenstein.jpg" data-background-opacity="0.7" data-transition="none">
 					<h1 class="large shadowed">@NoArgsConstructor</h1>
@@ -210,7 +214,7 @@
 						<div class="fragment">
 							Is this worth &gt; 1000 lines of externally maintained code?
 							<pre>
-								<code class="language-java hljs large-code-sample" data-trim data-line-numbers="|1,3">
+								<code class="language-java hljs large-code-sample" data-trim data-line-numbers="1,3">
 									import lombok.extern.slf4j.Slf4j;
 									
 									@Slf4j
@@ -242,12 +246,19 @@
 						</div>
 					</div>
 				</section>
+				
+				<section data-transition="none">
+					<h3>IntelliJ Live template</h3>
+					<div class="centered-content">
+						<video data-autoplay src="media/intellij-live-template-logger.mp4" loop></video>
+					</div>
+				</section>
 
 				<section data-transition="none">
-					<h3>IntelliJ Live template for slf4j</h3>
+					<h3>IntelliJ Live template</h3>
 					<div class="centered-content">
 						<pre>
-							<code class="hljs large-code-sample" data-trim data-line-numbers="|2|4">
+							<code class="hljs large-code-sample" data-trim data-line-numbers>
 									&lt;template name="logger" 
 											value="private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger($CLASS_NAME$.class);" 
 											toReformat="false" 
