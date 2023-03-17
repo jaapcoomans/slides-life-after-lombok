@@ -19,7 +19,7 @@
 			<div class="slides">
 				<!-- Opening ------------------------------------------------------------------------------------------>
 				
-				<section>
+				<section data-transition="none">
 					<div class="centered-content">
 						<h1 class="title">Is there life after Lombok?</h1>
 						<p>Jaap Coomans</p>
@@ -257,9 +257,9 @@
 				<section data-transition="none">
 					<h3>IntelliJ Live template</h3>
 					<div class="centered-content">
-						<pre>
+						<pre class="fragment">
 							<code class="hljs large-code-sample" data-trim data-line-numbers>
-									&lt;template name="logger" 
+									&lt;template name="log" 
 											value="private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger($CLASS_NAME$.class);" 
 											toReformat="false" 
 											toShortenFQNames="true"&gt;
@@ -270,6 +270,7 @@
 									&lt;/template&gt;
 							</code>
 						</pre>
+						<img class="fragment" src="images/intellij-live-template-logger.png" alt="IntelliJ live template configuration for slf4j"/>
 					</div>
 				</section>
 
@@ -328,9 +329,13 @@
 					</div>
 				</section>
 				
+				<section data-transition="none">
+					<!-- EMPTY SLIDE -->
+				</section>
+				
 				<!-- Working memory / cognitive load ------------------------------------------------------------------>
 				
-				<section data-background="images/backgrounds/cognitive-load.jpg" data-transition="none">
+				<section data-background="images/backgrounds/cognitive-load.jpg" data-transition="none" data-visibility="hidden">
 					<div class="centered-content">
 						<h1 class="huge">Cognitive load</h1>
 					</div>
@@ -395,6 +400,21 @@
 						https://www.flickr.com/photos/jstuker/15609198570/
 					</div>
 				</section>
+
+				<section>
+					<h3>Sloppy Value Objects</h3>
+					<div class="centered-content">
+						<pre>
+							<code class="language-java hljs large-code-sample" data-trim>
+								public void changePhoneNumber(String phoneNumber) {
+									this.contactDetails = this.contactDetails.toBuilder()
+										.phoneNumber(phoneNumber)
+										.build();
+								}
+							</code>
+						</pre>
+					</div>
+				</section>
 				
 				<section>
 					<h3>Redundant annotations</h3>
@@ -441,31 +461,22 @@
 						</pre>
 					</div>
 				</section>
-
-				<section>
-					<h3>Sloppiness with Value Objects</h3>
-					<div class="centered-content">
-						<pre>
-							<code class="language-java hljs" data-trim>
-								public void changePhoneNumber(String phoneNumber) {
-									this.contactDetails = this.contactDetails.toBuilder()
-										.phoneNumber(phoneNumber)
-										.build();
-								}
-							</code>
-						</pre>
-					</div>
-				</section>
 				
+				<!-- Life after Lombok -------------------------------------------------------------------------------->
+				
+				<section data-transition="none">
+					<h1 class="centered-content huge">Life after Lombok</h1>
+				</section>
+
 				<section data-transition="none" data-background="images/backgrounds/records.jpg" data-background-opacity="0.3">
-					<h1 class="centered-content large">What about records?</h1>
+					<h1 class="centered-content huge">Records FTW?</h1>
 					<div class="cc-by-nc-sa">
 						Author: Risa<br/>
 						https://www.flickr.com/photos/risayv/4514353658/
 					</div>
 				</section>
 				
-				<section>
+				<section data-transition="none">
 					<h1 class="huge">
 						records<br/>
 						!=<br/>
@@ -473,7 +484,7 @@
 					</h1>
 				</section>
 				
-				<section data-transition="none" data-background="images/backgrounds/duke-heart.jpg"  data-background-color="rgb(255, 255, 255)" data-background-size="auto 80%">
+				<section data-transition="none" data-background="images/backgrounds/duke-heart.jpg" data-background-color="rgb(255, 255, 255)" data-background-size="auto 80%">
 					<h1>Love the language</h1>
 					<div style="position: absolute; bottom: 30px; right: 30px;">
 						<p>#lovejava</p>
