@@ -441,20 +441,17 @@
 							<code class="language-java hljs large-code-sample" data-trim>
 								@AllArgsConstructor
 								class Person {
-									public static void main(String[] args) {
-										var person = new Person("Jaap", 41);
-								
-										System.out.println(person.getName());
-									}
-								
 									@Getter
 									private String name;
+								
+									@Getter 
+									private String alias;
 								
 									@Getter
 									private int age;
 									
 									public String getName() {
-										return String.format("%s (%d)", name, age);
+										return String.format("%s (%s)", name, alias);
 									}
 								}
 							</code>
